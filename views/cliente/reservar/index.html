@@ -336,28 +336,21 @@
 
    
         <script>
-            const fechaInput = document.getElementById('fechareserva');
-            const fechaActual = new Date();
-            const horaMinima = 7; // 7am
-            const horaMaxima = 19; // 7pm
-          
-            // Establecer la fecha mínima con la hora de inicio
-            const fechaMinima = new Date(fechaActual.getFullYear(), fechaActual.getMonth(), fechaActual.getDate(), horaMinima, 0, 0);
-            fechaMinima = fechaMinima.toISOString().slice(0, 16); // formato yyyy-MM-ddTHH:mm
-          
-            fechaInput.min = fechaMinima;
-          
-            // Agregar evento de cambio para verificar la hora seleccionada
-            fechaInput.addEventListener('change', function() {
-              const fechaSeleccionada = new Date(fechaInput.value);
-              const horaSeleccionada = fechaSeleccionada.getHours();
-          
-              if (horaSeleccionada < horaMinima || horaSeleccionada > horaMaxima) {
-                alert('La hora debe estar entre 7am y 7pm');
-                fechaInput.value = ''; // Resetear el valor del input
-              }
-            });
-          </script>
+              const fechaInput = document.getElementById('fechareserva');
+                 const fechaActual = new Date();
+                 const fechaMinima = fechaActual.toISOString().slice(0, 16); // formato yyyy-MM-ddTHH:mm
+                            
+                fechaInput.min = fechaMinima;
+            async function cerrarSesion(){
+                try {
+                    const response = await axios.post('/api/users/logout')
+                    console.log(response.data) 
+                    window.location.href='/login/'// Verificar que la respuesta sea correcta
+                } catch (error) {
+                    console.error(error) // Verificar que el error sea registrado correctamente
+                }
+}
+        </script>
 
     <script src="reserva.js"  type="module"></script>
     <script src="../components/app.js" type="module"></script>
