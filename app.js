@@ -14,7 +14,7 @@ app.listen(process.env.PORT || 3000, () => {
   console.log("Servidor iniciado en el puerto 3000");
 });
 
-app.use("/", express.static("views"));
+
 
 async function conectarDB() {
   try {
@@ -45,7 +45,7 @@ app.use("/administrador-informacion", express.static(path.resolve("views/adminis
 
 
 
-app.use("/home", express.static(path.resolve("views", "home")))
+app.use("/", express.static(path.resolve("views", "home")))
 app.use("/login", express.static(path.resolve("views", "login")))
 app.use("/components", express.static(path.resolve("views", "components")))
 app.use("/registro", express.static(path.resolve("views", "registro")))
