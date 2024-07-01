@@ -14,7 +14,7 @@ const crearBarraNav = () => {
                     <path d="M6 6l12 12" />
                   </svg>
             </span>
-            <a href="/home/">INICIO</a>
+            <a href="/">INICIO</a>
             <a href="#servicios">SERVICIOS</a>
             <a href="#beneficios">BENEFICIOS</a>
             <a href="/login/">RESERVA EN LINEA</a>
@@ -44,7 +44,7 @@ const barraNavLogin = () => {
                 <path d="M6 6l12 12" />
               </svg>
         </span>
-        <a href="/home/">INICIO</a>
+        <a href="/">INICIO</a>
         <a href="/appmain/">RESERVA EN LINEA</a>
         <a href="/registro/">REGISTRARSE</a>
         <a href="/login/">INICIAR SESION</a>
