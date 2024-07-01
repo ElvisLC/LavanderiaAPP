@@ -10,7 +10,7 @@ const userPagos= require("./controllers/pagos");
 
 app.use(express.static("views", { publicPath: "/home/" }));
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 4000, () => {
   console.log("Servidor iniciado en el puerto 3000");
 });
 

@@ -45,7 +45,7 @@ const barraNavLogin = () => {
               </svg>
         </span>
         <a href="/">INICIO</a>
-        <a href="/appmain/">RESERVA EN LINEA</a>
+        <a href="/reservar/">RESERVA EN LINEA</a>
         <a href="/registro/">REGISTRARSE</a>
         <a href="/login/">INICIAR SESION</a>
       </div>
