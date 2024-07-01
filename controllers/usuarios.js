@@ -3,7 +3,7 @@ const user = require("../models/usuario");
 const secadora = require("../models/secadora");
 const lavadora = require("../models/lavado");
 const jwt = require('jsonwebtoken');
-const dotev=require('dotenv');
+const dotenv=require('dotenv');
 const e = require("express");
 
 userRouter.post("/registro", async (req, res) => {
@@ -67,9 +67,7 @@ userRouter.post("/login", async (req, res) => {
       console.log(consulta.email);
 
       try {
-        const updatedUser = await user.findOneAndUpdate({ email: email }, { $set: { verificar: true } }, { new: true });
         
-        console.log(updatedUser); // Verificar que se devuelva el documento actualizado
       } catch (error) {
         console.error(error); // Verificar que no haya errores de escritura
       }
@@ -277,10 +275,6 @@ userRouter.get("/reservasActivas", async(req, res) => {
   
   //...
 });
-
-
-
-
 
 
 module.exports = userRouter;

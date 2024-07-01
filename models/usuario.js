@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const user = new mongoose.Schema({
-  verificar:Boolean,
   usuario: String,
   password: String,
   telefono: String,
