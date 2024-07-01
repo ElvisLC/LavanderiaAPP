@@ -137,7 +137,7 @@ const crearFooter = () => {
         </div>`
 }
 
-  if (window.location.pathname =='/gi') {
+  if (window.location.pathname =='/') {
       console.log('workin');
       crearBarraNav()
       crearFooter()
