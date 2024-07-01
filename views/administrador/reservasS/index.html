@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavadoras-Reservas</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        
+    <link rel="stylesheet" href="../media/css/output.css">
+    <link rel="stylesheet" href="../media/css/input.css">
+    <link rel="icon" type="image/png" href="../media/assets/adminIcon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add this to your CSS file */
+        
+        
+        #list {
+          transform: translateX(-100%); /* Initial state: hidden off-screen to the left */
+          transition: transform 0.5s ease-in-out; /* Add a transition to the initial state */
+        }
+        
+        #list.slide-in {
+          transform: translateX(0%);
+          transition: transform 0.5s ease-in-out;
+          /* Agrega una regla para cambiar el valor de transform gradualmente */
+          animation: slideIn 0.5s ease-in-out;
+        }
+        
+        @keyframes slideIn {
+          from {
+            transform: translateX(-100%);
+          }
+          to {
+            transform: translateX(0%);
+          }
+        }
+        #list.block {
+          transform: translateX(0);
+          visibility: visible;
+        }
+        
+        #list.hidden {
+          transform: translateX(-100%);
+          visibility: hidden;
+        }
+        
+        #list.slide-out {
+          transform: translateX(-100%);
+          transition: transform 1s ease-in-out; /* Update the transition timing */
+        }
+        
+        
+        #formulario_lavadora{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+        #formLavadora{
+            @media(max-width: 1000px){
+                margin-left: 3rem;
+                
+            }
+        }
+        
+        </style>
+</head>
+<body class="flex flex-col bg-bg-project font-poppins">
+    
+    <main class="flex flex-row h-screen">
+      <nav class="bg-white w-max h-screen fixed rounded-r-xl   justify-center items-center" data-id="menu" >
+
+        <div class="relative w-full px-5">
+            <p href="" id="show" class="cursor-pointer flex my-6 justify-end right-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class=" icon icon-tabler icon-tabler-menu-2" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#053968" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M4 6l16 0" />
+                    <path d="M4 12l16 0" />
+                    <path d="M4 18l16 0" />
+                </svg>
+            </p>
+
+        </div>
+
+      
+        <div id="list">
+            <ul  class=" px-12 my-7">
+                
+                <div>
+                    
+                </div>
+                            
+        <p id="hide" class="cursor-pointer flex my-6 ml-auto mr-11 justify-end">
+            <img src="../media/assets/closemenu.svg" alt="">
+        </p>
+    
+                <li href="#" class="link-parent">
+
+                    <a class="flex gap-3 py-4" href="/administrador-estadisticas/">
+                        <img src="../media/assets/dashboard.svg">
+                        Inicio    
+                    </a>
+
+                </li>
+
+
+                <li class="link-parent data-[toggle]:grid-rows-[max-content_1fr]" data-dropdown>
+
+                    <a class="text-[#50d71e] flex gap-3 py-4" data-info="dropdown"  >
+                        <img src="../media/assets/lavadorassvg.svg">
+                            Lavadoras
+
+                        <img src="../media/assets/arrow.svg" class="ml-auto transition-transform" data-row>
+                    </a>
+
+    
+                    <ul class="link-child overflow-hidden ml-4 border-l border-gray-700">
+
+                        <li class="p-4 hover:bg-hover-elements">
+                            <a href="/administrador-lavadoras/">Mostrar reservas</a>
+                        </li>
+                        <li class="p-4 hover:bg-hover-elements">
+                            <a href="/administrador-lavadoras-reservas/">Historial de reservas</a>
+                        </li>
+                
+                    </ul>
+        
+                    
+
+                </li>
+
+                <li class="link-parent data-[toggle]:grid-rows-[max-content_1fr]" data-dropdown>
+
+                    <a class="flex gap-3 py-4" data-info="dropdown"  href="#">
+                        <img src="../media/assets/secadora.svg">
+                        Secadoras
+
+                        <img src="../media/assets/arrowsecadoras.svg" class="ml-auto transition-transform" data-row>
+                    </a>
+
+    
+                    <ul class="link-child overflow-hidden ml-4 border-l border-gray-700">
+
+                        <li class="p-4 hover:bg-hover-elements">
+                            <a href="/administrador-secadoras/">Mostrar reservas</a>
+                        </li>
+
+                        <li class="p-4 hover:bg-hover-elements">
+                            <a href="/administrador-secadoras-reservas/">Historial de reservas</a>
+                        </li>
+
+
+                    
+
+                    </ul>
+        
+                    
+
+                </li>
+
+                <li class="link-parent data-[toggle]:grid-rows-[max-content_1fr]" data-dropdown>
+
+                    <a class="flex gap-3 py-4" data-info="dropdown"  href="#">
+                        <img src="../media/assets/pagosicon.svg">
+                        Pagos
+
+                        <img src="../media/assets/arrowspagos.svg" class="ml-auto transition-transform" data-row>
+                    </a>
+
+    
+                    <ul class="link-child overflow-hidden ml-4 border-l border-gray-700">
+
+                        <li class="p-4 hover:bg-hover-elements">
+                            <a href="/administrador-pagos-historial/">Historial de pagos</a>
+                        </li>
+
+                        <li class="p-4 hover:bg-hover-elements">
+                            <a href="/administrador-pagos-verificar/">Pagos por verificar</a>
+                        </li>
+
+
+                    </ul>
+        
+                    
+
+                </li>
+
+
+
+               
+
+                <li class="link-parent data-[toggle]:grid-rows-[max-content_1fr]" data-dropdown>
+
+                    <div class="flex gap-3 py-4" data-info="dropdown"  >
+                        <img src="../media/assets/settings.svg">
+                        <a href="#">Ajustes</a>
+
+                        <img src="../media/assets/arrowsettings.svg" class="ml-auto transition-transform" data-row>
+                    </div>
+
+    
+                    <ul class="link-child overflow-hidden ml-4 border-l border-gray-700">
+
+                        <li class="p-4 hover:bg-hover-elements">
+                            <a href="/administrador-informacion/">Informacion personal</a>
+                        </li>
+
+
+                        
+
+                    </ul>
+        
+                    
+
+                </li>
+
+                <li class="link-parent">
+
+                    <div class="flex gap-3 py-4">
+                        <img src="../media/assets/logout.svg">
+                        <a onclick="cerrarSesion()">Cerrar sesion</a>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+               
+   
+        </div>
+
+            
+            
+        
+       
+        
+    </nav> 
+    
+      
+        <div class="flex-grow p-4 overflow-y-auto  flex  flex-col justify-center items-center">
+
+            <div class="bg-white shadow rounded-md p-4 ml-16 ">
+                <h2 class="text-xl font-bold mb-2 text-center">Filtrar por</h2>
+                <div class="grid grid-cols-2 gap-4">
+                 
+                  <div class="flex flex-col">
+                    <label for="banco" class="block text-gray-700 text-sm font-bold mb-2">Estado del pago</label>
+                    <select  class="estadoPago shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                      <option value="">Todos</option>
+                      <option value="Verificado">Verificado</option>
+                      <option value="Rechazado">Rechazado</option>
+                      <option value="Pendiente">Pendiente</option>
+
+                    </select>
+                  </div>
+                  <div class="flex flex-col">
+                    <label for="estado" class="block text-gray-700 text-sm font-bold mb-2">Estado de la reserva</label>
+                    <select id="estadoReserva" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                      <option value="">Todos</option>
+                      <option value="Verificada">Verificada</option>
+                      <option value="Rechazada">Rechazada</option>
+                      <option value="Finalizada">Finalizada</option>
+                      <option value="En curso">En curso</option>
+
+                      <option value="En revisión de pago">En revision de pago</option>
+                    </select>
+                  </div>
+                  
+                  <div class="flex flex-col">
+                    <label for="referencia" class="block text-gray-700 text-sm font-bold mb-2">ID</label>
+                    <input type="text" id="id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Numero de referencia">
+                  </div>
+
+                  <div class="flex flex-col">
+                    <label for="referencia" class="block text-gray-700 text-sm font-bold mb-2">Numero de secadora</label>
+                    <input type="text" id="nroSecadora" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Numero de lavadora">
+                  </div>
+                </div>
+              </div>
+
+            <h1 class="flex justify-center text-center text-[2rem] mt-20 ml-14">HISTORIAL DE RESERVAS-SECADORAS</h1>
+            <div class="reservas-container bg-white shadow-md rounded ml-16 p-10 mt-4  ">
+                <table class="w-full max-w-1xl table-auto  md:max-w-7xl " style="table-layout: fixed">
+                    <thead class="">
+                      <tr>
+                        <th class="text-center">Reserva ID</th>
+                        <th class="text-center">Nro Secadora</th>
+                        <th class="text-center">Estado</th>
+                        <th class="text-center">Pago estado</th>
+                        <th class="text-center">Fecha</th>
+                        <th class="text-center">Usuario</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody class="reservas ">
+                    </tbody>
+                  </table>
+
+                <h2 id="message" class="text-center">NO HAY RESERVAS PARA MOSTRAR</h2>
+
+            
+              </div>
+        </div>
+            
+        </div>
+    </main>
+    <script>
+        
+      </script>
+
+
+    <script src="clientMRS.js"></script>
+    <script src="../components/app.js" defer></script>
+</body>
+</html>

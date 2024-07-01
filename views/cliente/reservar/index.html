@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavanderia-Estadisticas</title>
+    
+    <link rel="stylesheet" href="../media/css/output.css">
+    <link rel="stylesheet" href="../media/css/input.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="../media/assets/lavadorassvg.svg">
+
+    <link rel="icon" type="image/png" href="../media/assets/admiIcon.svg">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+/* Add this to your CSS file */
+
+
+#list {
+  transform: translateX(-100%); /* Initial state: hidden off-screen to the left */
+  transition: transform 0.5s ease-in-out; /* Add a transition to the initial state */
+}
+
+#list.slide-in {
+  transform: translateX(0%);
+  transition: transform 0.5s ease-in-out;
+  /* Agrega una regla para cambiar el valor de transform gradualmente */
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+#list.block {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+#list.hidden {
+  transform: translateX(-100%);
+  visibility: hidden;
+}
+
+#list.slide-out {
+  transform: translateX(-100%);
+  transition: transform 1s ease-in-out; /* Update the transition timing */
+}
+
+
+#formulario_lavadora{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+#formLavadora{
+    @media(max-width: 1000px){
+        margin-left: 3rem;
+        
+    }
+}
+
+</style>
+</head>
+<body id="sidebar"  class="flex flex-row bg-bg-project font-poppins">
+    <div id="notificacion"></div>
+
+        <nav class="bg-white w-max h-screen fixed rounded-r-xl   justify-center items-center" data-id="menu" >
+
+            <div class="relative w-full px-5">
+                <p href="" id="show" class="cursor-pointer flex my-6 justify-end right-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class=" icon icon-tabler icon-tabler-menu-2" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#053968" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M4 6l16 0" />
+                        <path d="M4 12l16 0" />
+                        <path d="M4 18l16 0" />
+                    </svg>
+                </p>
+    
+            </div>
+
+          
+            <div id="list">
+                <ul  class=" px-12 my-7">
+                    
+                    <div>
+                        
+                    </div>
+                                
+            <p id="hide" class="cursor-pointer flex my-6 ml-auto mr-11 justify-end">
+                <img src="../media/assets/closemenu.svg" alt="">
+            </p>
+        
+                    <li href="#" class="link-parent">
+    
+                        <a class="flex gap-3 py-4" href="/reservar/">
+                            <img src="../media/assets/dashboard.svg">
+                            Reservar    
+                        </a>
+    
+                    </li>
+    
+    
+                    <li class="link-parent data-[toggle]:grid-rows-[max-content_1fr]" data-dropdown>
+    
+                        <a class="text-[#50d71e] flex gap-3 py-4" data-info="dropdown"  >
+                            <img src="../media/assets/lavadorassvg.svg">
+                                Lavadoras
+    
+                            <img src="../media/assets/arrow.svg" class="ml-auto transition-transform" data-row>
+                        </a>
+    
+        
+                        <ul class="link-child overflow-hidden ml-4 border-l border-gray-700">
+    
+                            <li class="p-4 hover:bg-hover-elements">
+                                <a href="/misLavadoras/">Mostrar reservas</a>
+                            </li>
+                    
+                        </ul>
+            
+                        
+    
+                    </li>
+    
+                    <li class="link-parent data-[toggle]:grid-rows-[max-content_1fr]" data-dropdown>
+    
+                        <a class="flex gap-3 py-4" data-info="dropdown"  href="#">
+                            <img src="../media/assets/secadora.svg">
+                            Secadoras
+    
+                            <img src="../media/assets/arrowsecadoras.svg" class="ml-auto transition-transform" data-row>
+                        </a>
+    
+        
+                        <ul class="link-child overflow-hidden ml-4 border-l border-gray-700">
+    
+                            <li class="p-4 hover:bg-hover-elements">
+                                <a href="/misSecadoras/">Mostrar reservas</a>
+                            </li>
+    
+                        
+    
+                        </ul>
+            
+                        
+    
+                    </li>
+    
+                    <li class="link-parent data-[toggle]:grid-rows-[max-content_1fr]" data-dropdown>
+    
+                        <a class="flex gap-3 py-4" data-info="dropdown"  href="#">
+                            <img src="../media/assets/pagosicon.svg">
+                            Pagos
+    
+                            <img src="../media/assets/arrowspagos.svg" class="ml-auto transition-transform" data-row>
+                        </a>
+    
+        
+                        <ul class="link-child overflow-hidden ml-4 border-l border-gray-700">
+    
+                            <li class="p-4 hover:bg-hover-elements">
+                                <a href="/historico/">Historial de pagos</a>
+                            </li>
+    
+    
+                        </ul>
+            
+                        
+    
+                    </li>
+    
+    
+    
+                   
+    
+                    <li class="link-parent data-[toggle]:grid-rows-[max-content_1fr]" data-dropdown>
+    
+                        <div class="flex gap-3 py-4" data-info="dropdown"  >
+                            <img src="../media/assets/settings.svg">
+                            <a href="#">Ajustes</a>
+    
+                            <img src="../media/assets/arrowsettings.svg" class="ml-auto transition-transform" data-row>
+                        </div>
+    
+        
+                        <ul class="link-child overflow-hidden ml-4 border-l border-gray-700">
+    
+                            <li class="p-4 hover:bg-hover-elements">
+                                <a href="/administrador-informacion/">Informacion personal</a>
+                            </li>
+    
+
+                            
+    
+                        </ul>
+            
+                        
+    
+                    </li>
+    
+                    <li class="link-parent">
+    
+                        <div class="flex gap-3 py-4">
+                            <img src="../media/assets/logout.svg">
+                            <a onclick="cerrarSesion()" href="#">Cerrar sesion</a>
+                        </div>
+    
+                    </li>
+                </ul>
+            </div>
+                   
+       
+            </div>
+
+                
+                
+            
+           
+            
+        </nav> 
+
+        <div class="container p-4 mx-auto flex justify-center items-center min-h-screen ">
+            <div class="w-full max-w-2xl  ">
+                <h2 class="text-2xl font-bold mb-4 text-center">Reservar en linea</h2>
+
+                <form id="formLavadora" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <div id="formulario_lavadora  ">
+                        <div id class="grid grid-cols-1  md:grid-cols-2">
+                            <div class="selectEquipo mt-5">
+
+                                <label name="equipo" for="validate" class=" block text-gray-700 text-sm font-bold mb-2">¿Que equipo desea reservar?</label>
+                                <select class="my-7 validate block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                    <option value="lavadora">LAVADORA</option>
+                                    <option value="secadora">SECADORA</option>
+                                </select>
+    
+                                
+                            <label for="fechareserva" class="block text-gray-700 text-sm font-bold mb-2">Fecha de la reserva:</label>
+                            <input type="datetime-local" id="fechareserva" class="mt-6 block w-full bg-gray-200 text-gray-700 border border-gray-200 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-4">
+                            </div>
+                           
+                            <div class="ocultarjys  items-center">
+                                <div class="ocultarItem m-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2 text-center">¿Desea incluir suavizante?</label>
+                                    <div class="flex justify-center">
+                                        <label for="si" class="inline-flex items-center mr-4">
+                                            <input type="radio" name="suavizante" value="si" class="form-radio text-indigo-600">
+                                            <span class="ml-2">SI</span>
+                                        </label>
+                                        <label for="no" class="inline-flex items-center">
+                                            <input type="radio" name="suavizante" value="no" class="form-radio text-indigo-600">
+                                            <span class="ml-2">NO</span>
+                                        </label>
+                                    </div>
+                                 
+                                </div>
+    
+                                <div class="ocultarItem m-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2 text-center">¿Desea incluir jabon?</label>
+                                    <div class="flex justify-center">
+                                        <label for="si" class="inline-flex items-center mr-4">
+                                            <input type="radio" name="jabon" value="si" class="form-radio text-indigo-600">
+                                            <span class="ml-2">SI</span>
+                                        </label>
+                                        <label for="no" class="inline-flex items-center">
+                                            <input type="radio" name="jabon" value="no" class="form-radio text-indigo-600">
+                                            <span class="ml-2">NO</span>
+                                        </label>
+                                    </div>
+                                  
+                                </div>
+    
+                                <div class="ocultarItem m-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2 text-center">¿Lavara usted la ropa de manera presencial?</label>
+                                    <div class="flex justify-center">
+                                        <label class="inline-flex items-center mr-4 justify-center">
+                                            <input type="radio" name="lavar" value="siLavara" class="form-radio text-indigo-600">
+                                            <span class="ml-2">SI</span>
+                                        </label>
+                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="lavar" value="noLavara" class="form-radio text-indigo-600">
+                                            <span class="ml-2">NO</span>
+                                        </label>
+                                    </div>
+                                  
+                                </div>
+                            </div>
+    
+    
+                            <div class="pagoMovil mb-4 md:mt-6">
+                                <h3 class="text-xl font-bold text-center">DATOS DE PAGO MOVIL</h3>
+                                <div class="flex justify-center flex-col m-auto ">
+                                    <p class="text-gray-700 my-5 text-center">Cedula: 11714405</p>
+                                    <p class="text-gray-700 my-5 text-center">Telefono: 04129005220</p>
+                                    <p class="text-gray-700 my-5 text-center">Banco: 0102 BDV</p>
+                                    <p class="text-gray-700 my-5 text-center">Monto a cancelar: <span class="montoReserva font-bold"></span></p>
+                                </div>
+                               
+                            </div>
+    
+                            <div class="pagoMoviEmisor mb-4 ">
+
+                                <div class="m-6">
+                                    <label for="cedulaEmisor" class="block text-gray-700 text-sm font-bold mb-2">Cedula del emisor</label>
+                                <input type="text" class="cedulaEmisor block w-full bg-gray-200 text-gray-700 border border-gray-200 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-4">
+    
+                                <label for="telefonoEmisor" class="block text-gray-700 text-sm font-bold mb-2">Telefono</label>
+                                <input type="text" class="telefonoEmisor block w-full bg-gray-200 text-gray-700 border border-gray-200 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-4">
+    
+                                <label for="banksCharge" class="block text-gray-700 text-sm font-bold mb-2">Banco emisor</label>
+                                <select class="banksCharge block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-4">
+                                </select>
+    
+                                <label for="numeroReferencia" class="block text-gray-700 text-sm font-bold mb-2">Nro de referencia</label>
+                                <input type="text" class="numeroReferencia block w-full bg-gray-200 text-gray-700 border border-gray-200 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                </div>
+                                
+                            </div>
+    
+                        </div>
+                       
+                        <button class="w-full bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">RESERVAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+   
+        <script>
+            async function cerrarSesion(){
+  try {
+    const response = await axios.post('/api/users/logout')
+    console.log(response.data) 
+    window.location.href='/login/'// Verificar que la respuesta sea correcta
+  } catch (error) {
+    console.error(error) // Verificar que el error sea registrado correctamente
+  }
+}
+        </script>
+
+    <script src="reserva.js"  type="module"></script>
+    <script src="../components/app.js" type="module"></script>
+</body>
+</html>

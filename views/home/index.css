@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    font-family: "Roboto slab";
+    scroll-behavior: smooth;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+nav ul li  a{
+    font-size: 1.1rem;
+    font-weight: bolder;
+    margin: 0 10px;
+}
+
+
+
+#servicios {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.servicio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.servicio img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+
+
+.topBar{
+    margin-top: 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background-color: #29ABE2;
+    padding: 0.5rem;
+    font-family: "Roboto slab", sans-serif;
+    font-size: 1.5rem;
+   
+}
+
+
+
+.topBar p, a{
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    
+}
+
+.navContainer{
+    display: flex;
+    margin:auto
+
+}
+
+.navContainer a{
+    color: #29ABE2;
+
+}
+
+.barItem{
+  
+    text-align: center;
+    align-items: center;
+    display: flex;
+}
+
+
+
+#inicio{
+    background-image:url("../media/homeslide.jpg");
+    height: 60vh;
+    background-size: cover;
+    justify-content: center;
+}
+
+/* 
+ */
+
+ #inicio {
+    text-align: start; /* Centra el contenido de la sección */
+  }
+  
+  .inicioCont {
+    display: flex; /* Permite centrar los elementos horizontalmente */
+    flex-direction: column; /* Organiza los elementos en una columna vertical */
+    align-items: center; /* Centra los elementos horizontalmente dentro de la columna */
+    justify-content: flex-start; /* Alinea los elementos al inicio de la columna */
+  }
+  
+  .textoInicio {
+    margin-top: 9rem;
+    margin-left:10px ;
+    
+    
+    /* Elimina el margen superior predeterminado */
+  }
+
+  .textoInicio h1{
+ 
+    color: white;
+    
+    /* Elimina el margen superior predeterminado */
+  }
+
+
+
+
+/* prueba */
+.sidenav {
+   display: flex;
+   padding-top: 50px;
+ 
+
+  }
+
+  .menuBtn{
+    display: none;
+  }
+  
+  .btndisable{
+    visibility: hidden;
+}
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size:1.2rem;
+    color: #29ABE2;
+    display: block;
+    transition: 0.3s;
+  
+  }
+  
+  .sidenav a:hover{
+    color: #6F9EE4;
+  }
+ 
+  
+
+/* NUESTROS SERVICIOS */
+
+#servicios{
+    background-color: #29ABE2;
+    
+  
+}
+
+#servicios h2,p,h3{
+    color: white;
+    margin: 8px;
+}
+
+#servicios p{
+    font-size: 1rem;
+}
+
+#servicios h3{
+    font-size:2rem ;
+}
+
+#servicios h2{
+    text-align: center;
+    font-size: 2.2rem;
+
+    
+}
+
+.serviciosContainer{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    
+    
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 10%;
+    
+ 
+}
+
+.servicio img{
+    display: flex;
+    margin: auto;
+}
+
+/* MEDIA QUERY */
+
+
+@media(min-width:1024px){
+
+
+
+    .serviciosContainer{
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .containerPrecios{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .textoInicio {
+        margin-top: 14%;
+        margin-left: 6rem;
+        margin-right: 50%;
+        color: white;
+        
+        /* Elimina el margen superior predeterminado */
+      }
+    
+
+    
+
+
+
+}
+@media(max-width:800px){
+
+    .serviciosContainer{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .ubicacion h2{
+
+        margin: 10%;
+    }
+    
+
+   
+    .disableItem{
+        display: none;
+    }
+
+    .menuBtn{
+        position: absolute;
+        margin-top: 20px;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+        cursor: pointer;
+        display: block;
+    }
+    .sidenav {
+        display: block;
+        
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: #29ABE2;
+        overflow-x: hidden;
+        transition: 0.5s;
+       
+        text-align:center;
+      }
+      
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      
+      }
+      
+      .sidenav a:hover{
+        color: #f1f1f1;
+      }
+      
+      .sidenav .closebtn {
+        position: absolute;
+        
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+       
+      }
+
+      .closebtn{
+        visibility: visible;
+        cursor: pointer;
+        margin-top: 27px;
+      }
+
+      img{
+        margin-left: -200px;
+      }
+
+      
+    
+
+    
+}
+
+/* PRECIOS */
+#precios h2{
+    font-size: 3rem;
+    font-weight: bold;
+    color: #29ABE2;
+    margin: 5%;
+    text-align: center;
+}
+
+.containerPrecios h3{
+    text-align: center;
+    color: #29ABE2;
+    margin: 5%;
+    font-size: 1.4rem;
+}
+
+.containerPrecios p{
+    text-align: center;
+    color: #29ABE2;
+    margin: 5%;
+    font-size:1.2rem ;
+}
+
+
+.containerPrecios p{
+    color: #29ABE2;
+}
+
+/* 
+footer
+ */
+
+ 
+ 
+ footer {
+    background-color:#29ABE2;
+    color: #fff;
+    padding: 20px 0;
+    
+}
+
+.footer-container {
+    display: flex;
+    gap: 0 5rem;
+    justify-content: center;
+    
+    
+}
+
+.itemFooter{
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+}
+
+.contactoItem{
+    display: flex;
+    padding:0.7rem 0;
+}
+
+.footer-section p {
+    margin: 10px 0;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+/* UBICACION*/
+.maps{
+    
+    display: flex;
+    margin:  auto;
+    width: 80%;
+    height: 30rem;
+}
+.ubicacion h2{
+    font-size: 2rem;
+    text-align: center;
+    color: #053968;
+}
+
+.ubicacion p{
+    color: #053968;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.imgPrecio{
+    border-radius: 50%;
+    display: flex;
+    margin: 2rem auto;
+}
+
+
+/* style.css */
+
+
+  
+
+  
+  #ofertas {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+/* General styles for the container section */
+
+  
+  /* Styles for the pricing section */
+  .precios {
+    margin-bottom: 40px; /* Add spacing below the pricing section */
+  }
+  
+  .grid-precios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Divide into 3 equal columns */
+    gap: 20px; /* Spacing between pricing items */
+  }
+  
+  .precio-individual {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for visual appeal */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center;
+  }
+  
+  .precio-individual img {
+    width: 80px; /* Adjust image size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 15px;
+  }
+  
+  .precio-individual h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .detalles-precio {
+    margin-bottom: 15px;
+  }
+  
+  .detalles-precio p {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .boton-reserva {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Blue button color */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .boton-reserva:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Styles for the offers section */
+  #ofertas {
+    margin-bottom: 40px; /* Add spacing below the offers section */
+  }
+  
+  .container-ofertas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Divide into 3 equal columns */
+    gap: 20px; /* Spacing between offers */
+  }
+  
+  .oferta {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for visual appeal */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center;
+  }
+  
+  .oferta img {
+    width: 80px; /* Adjust image size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 15px;
+  }
+  
+  .oferta h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .oferta p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  /* Styles for the recommendations section */
+  #recomendaciones {
+    margin-bottom: 40px; /* Add spacing below the recommendations section */
+  }
+  
+  .recomendaciones-lista {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .recomendaciones-lista li {
+    margin-bottom: 20px;
+  }
+  
+  .recomendacion-icono {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #007bff; /* Blue background color */
+    color: #fff;
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 10px;
+  }
+  
+  
+  

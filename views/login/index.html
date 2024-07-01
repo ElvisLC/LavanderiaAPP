@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar sesion</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="shortcut icon" type="image/png" href="../media/logo.jpeg">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body class="h-screen">
+
+  <div id="notificacion" class=""></div>
+
+  
+<header>
+
+</header height>
+  
+<div id="notificacion" class="fixed top-20 left-0 rigth-0"></div>
+
+    <div class="grid place-items-center h-4/5"> 
+      
+
+    <div class=" p-50 mt-4 flex flex-col bg-[#e8e8e8]  rounded-lg p-4 shadow-sm" >
+      <form  id="formulario" class=" py-12 px-12 flex flex-col gap-5">
+        <h1 class="text-center text-[#053968] text-[2rem]">Iniciar sesion</h1>
+        <div class="flex flex-col gap-10">
+          <div class="flex flex-col gap-4">
+            <div class="input flex flex-col w-fit static">
+              <label for="email" class="text-[#053968] text-xs font-semibold relative top-2 ml-[7px] px-[3px] bg-[#e8e8e8] w-fit">Email</label>
+              <input id="email" type="text" placeholder="Direccion de correo" name="email"
+                class="border-[#053968] input px-[10px] py-[11px] text-xs bg-[#e8e8e8] border-2 rounded-[5px] w-[300px] focus:outline-none placeholder:text-black/25" />
+            </div>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="input flex flex-col w-fit static">
+              <label for="contraseña"
+                class="text-[#053968] text-xs font-semibold relative top-2 ml-[7px] px-[3px] bg-[#e8e8e8] w-fit">Contraseña</label>
+              <input id="password" type="password" placeholder="Contraseña" name="contraseña"
+                class="border-[#053968] input px-[10px] py-[11px] text-xs bg-[#e8e8e8] border-2 rounded-[5px] w-[300px] focus:outline-none placeholder:text-black/25" />
+            </div>
+          </div>
+        </div>
+
+        <div class="self-center">
+          <button type="submit"
+            class="bg-[#053968] text-white border  border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+            <span
+              class="bg-[#053968] shadow-cyan-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
+            Ingresar
+          </button>
+        </div>
+
+        <div class="text-center text-[#053968]">¿No tienes una cuenta?, <a class="hover:text-blue-700" href="../registro/index.html">Registrate</a></div>
+      </form>
+    </div>
+  </div>
+  
+
+  <footer>
+
+
+    <div class="footer-container">
+
+           
+            
+            
+
+      
+        <div class="itemFooter">  
+        <h3>Contactanos</h3>
+    <div class="contactoItem"> 
+        <a href="tel:+584129005220"> 
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+        </svg>
+        </a>
+        <a class="disableItem" href="tel:+584129005220">
+            +58 4129005220
+        </a>
+
+    </div>
+
+    <div class="contactoItem">
+        <a href="mailto:lavanderialalagunaazul@gmail.com">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+            <path d="M3 7l9 6l9 -6" />
+            </svg>
+        </a>
+        
+
+        <a class="disableItem" href="mailto:lavanderialalagunaazul@gmail.com
+          ">lavanderialalagunaazul@gmail.com
+        </a>
+
+    </div>
+
+    <div class="contactoItem">
+
+      
+        <a href="href="https://www.instagram.com/lavanderia_lalagunaazul?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+            <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+            <path d="M16.5 7.5l0 .01" />
+           </svg>
+        </a>
+       
+
+           <a class="disableItem" href="https://www.instagram.com/lavanderia_lalagunaazul?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+            lavanderia_lalagunaazul
+           </a>
+        
+      
+    </div>
+
+
+     </div>
+        
+
+    
+
+        <div >
+            <h3 class="mt-0">Horario</h3>
+            <p class="mt-2">Lunes a Viernes: 8am - 7pm</p>
+            <p class="mt-3">Sábados y Domingos: 9am - 5pm</p>
+        </div>
+     
+    </div>
+
+
+
+    <div class="footer-bottom">
+        <p class="t">© 2020 Todos los Derechos Reservados. | Sitio Web Creado por: Elvis La Cruz</p>
+    </div>
+</footer>
+<script>/* Open the sidenav */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+  }
+  
+  /* Close/hide the sidenav */
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }</script>
+  <script src="../components/homenav.js"></script>
+  <script src="../components/noti.js" type="module"></script>
+
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>

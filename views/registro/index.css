@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    font-family: "Roboto slab";
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+nav ul li  a{
+    font-size: 1.1rem;
+    font-weight: bolder;
+    margin: 0 10px;
+}
+
+.topBar{
+    margin-top: 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background-color: #29ABE2;
+    padding: 0.5rem;
+    font-family: "Roboto slab", sans-serif;
+    font-size: 1.5rem;
+   
+}
+
+
+
+.topBar p, a{
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    
+    
+}
+
+.navContainer{
+    display: flex;
+    margin:auto
+
+}
+
+.navContainer a{
+    color: #29ABE2;
+
+}
+
+.barItem{
+  
+    text-align: center;
+    align-items: center;
+    display: flex;
+}
+
+
+
+.sidenav {
+   display: flex;
+   padding-top: 50px;
+ 
+
+  }
+
+  .menuBtn{
+    display: none;
+  }
+  
+  .btndisable{
+    visibility: hidden;
+}
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size:1.2rem;
+    color: #29ABE2;
+    display: block;
+    transition: 0.3s;
+  
+  }
+  
+  .sidenav a:hover{
+    color: #6F9EE4;
+  }
+ 
+
+
+@media(min-width:900px){
+    
+
+}
+
+@media(max-width:800px){
+
+  
+
+    .disableItem{
+        display: none;
+    }
+
+
+    .menuBtn{
+        position: absolute;
+        margin-top: 20px;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+        cursor: pointer;
+        display: block;
+    }
+    .sidenav {
+        display: block;
+        
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: #29ABE2;
+        overflow-x: hidden;
+        transition: 0.5s;
+       
+        text-align:center;
+      }
+      
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      
+      }
+      
+      .sidenav a:hover{
+        color: #f1f1f1;
+      }
+      
+      .sidenav .closebtn {
+        position: absolute;
+        
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+       
+      }
+
+      .closebtn{
+        visibility: visible;
+        cursor: pointer;
+        margin-top: 27px;
+      }
+
+      .topBar a{
+        color: white;
+      }
+
+     
+   
+    
+}
+/* 
+footer
+ */
+
+ 
+ 
+ footer {
+    background-color:#29ABE2;
+    color: #fff;
+    padding: 20px 0;
+    
+}
+
+.footer-container {
+    display: flex;
+    gap: 0 5rem;
+    justify-content: center;
+    
+    
+}
+
+.itemFooter{
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+}
+
+.contactoItem{
+    display: flex;
+    padding:0.7rem 0;
+}
+
+.footer-section p {
+    margin: 10px 0;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+::placeholder{
+    color: #29ABE2;
+}
+h1{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
