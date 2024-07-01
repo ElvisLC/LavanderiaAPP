@@ -64,7 +64,7 @@ app.use("/info", express.static(path.resolve("views/cliente/info")));//Historial
 
 
 
-app.use("/historialRFL", express.static(path.resolve("views", "historialRFL")));
+
 
 
 
