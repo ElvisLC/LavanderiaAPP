@@ -235,7 +235,6 @@ includeservice.forEach((radio) => {
 
 formLavadora.addEventListener('submit',async (e)=>{
 
-  //!fechareserva.value || !validate.value || !numeroReferencia.value||!cedulaEmisor.value || !telefonoEmisor.value||!comprobarJabon||!comprobarServicio||!comprobarSuavizante//
 
  
 
@@ -254,7 +253,7 @@ formLavadora.addEventListener('submit',async (e)=>{
             reserva.montoTotal=montoFinalGlobal
             const fechaInicio = new Date(fechareserva.value);
             const fechaFinal = new Date(fechaInicio.valueOf()); // crea una copia de la fecha inicial
-            fechaFinal.setMinutes(fechaInicio.getMinutes() + 1);
+            fechaFinal.setHours(fechaInicio.getHours() + 1);
             reserva.fechaInicio = fechaInicio;
             reserva.fechaFinal = fechaFinal;
           console.log(fechaInicio,fechaFinal);

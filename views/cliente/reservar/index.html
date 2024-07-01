@@ -244,9 +244,10 @@
     
                                 
                             <label for="fechareserva" class="block text-gray-700 text-sm font-bold mb-2">Fecha de la reserva:</label>
-                            <input type="datetime-local" id="fechareserva" class="mt-6 block w-full bg-gray-200 text-gray-700 border border-gray-200 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-4">
+                            <input type="datetime-local" min="" id="fechareserva" class="mt-6 block w-full bg-gray-200 text-gray-700 border border-gray-200 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-4">
                             </div>
-                           
+
+                       
                             <div class="ocultarjys  items-center">
                                 <div class="ocultarItem m-4">
                                     <label class="block text-gray-700 text-sm font-bold mb-2 text-center">¿Desea incluir suavizante?</label>
@@ -335,6 +336,11 @@
 
    
         <script>
+              const fechaInput = document.getElementById('fechareserva');
+                              const fechaActual = new Date();
+                              const fechaMinima = fechaActual.toISOString().slice(0, 16); // formato yyyy-MM-ddTHH:mm
+                            
+                              fechaInput.min = fechaMinima;
             async function cerrarSesion(){
   try {
     const response = await axios.post('/api/users/logout')
