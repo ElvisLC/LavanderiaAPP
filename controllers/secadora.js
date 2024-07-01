@@ -195,7 +195,7 @@ setInterval(async () => {
      
     }
 
-    console.log('Estado de lavadoras y reservas actualizado');
+    console.log('Estado de secadoras y reservas actualizado');
   } catch (error) {
     console.error('Error al actualizar estado de lavadoras y reservas:', error);
   }

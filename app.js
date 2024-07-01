@@ -9,7 +9,9 @@ const userSecadora = require("./controllers/secadora");
 const userPagos= require("./controllers/pagos");
 
 
-
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Servidor iniciado en el puerto 3000");
+});
 
 
 
@@ -23,6 +25,9 @@ async function conectarDB() {
 }
 
 conectarDB();
+app.get("/", (req, res) => {
+  res.sendFile(path.resolve("views", "home"));
+});
 
 app.use(express.json());
 
@@ -46,7 +51,7 @@ app.use("/registro", express.static(path.resolve("views", "registro")))
 app.use("/media", express.static(path.resolve("views", "media")))
 app.use("/css", express.static(path.resolve("views", "css")))
 
-
+app.use(express.static(path.resolve("views")));
 
 
 
