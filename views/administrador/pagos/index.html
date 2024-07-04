@@ -16,7 +16,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         /* Add this to your CSS file */
-        
+        @media (max-width:1024px) {
+        #tableHide{
+         display: none; 
+        }
+        #eye{
+          display:block;
+          text-align: center;
+        }
+       }
         
         #list {
           transform: translateX(-100%); /* Initial state: hidden off-screen to the left */
@@ -244,10 +252,11 @@
                   <thead>
                     <tr>
                       <th class="text-center">Equipo</th>
-                      <th class="text-center">Cedula</th>
+                      <th class="text-center">Monto</th>
+                      <th id="eye"  class="text-center flex justify-center pr-2  md:hidden ">Detalles</th>
                       <th class="text-center">Telefono</th>
                       <th class="text-center">Banco</th>
-                      <th class="text-center">Monto</th>
+                      <th class="text-center">Cedula</th>
                       <th class="text-center">Numero de referencia</th>
                       <th class="text-center">VERIFICAR</th>
                       <th class="text-center">RECHAZAR</th>
