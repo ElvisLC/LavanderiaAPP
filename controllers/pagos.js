@@ -297,7 +297,10 @@ userPagos.get("/ganancias", async (req, res) => {
   
     for (const pago of Object.keys(mostrarPR)) {
       const pagos = mostrarPR[pago];
-      ganancias+=pagos.monto
+      if(pagos.estado=='Verificado'){
+        ganancias+=pagos.monto
+
+      }
     }
     
     res.json(ganancias);
