@@ -17,7 +17,7 @@ const crearBarraNav = () => {
             <a href="/">INICIO</a>
             <a href="#servicios">SERVICIOS</a>
             <a href="#beneficios">BENEFICIOS</a>
-            <a href="/login/">RESERVA EN LINEA</a>
+            <a href="/login/">RESERVAR</a>
             <a href="/login/">INICIAR SESION</a>
           </div>
           
