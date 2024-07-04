@@ -28,12 +28,12 @@ document.addEventListener('DOMContentLoaded',async ()=>{
        console.log(dateTimeString); // Output: "28/06/2024, 21:52"
        tr.innerHTML=`
                 
-                 <td class="py-3  text-center ">${item.reservaF.reservaId}</td>
-                 <td class="py-3  text-center ">${item.lavadora}</td>
-                 <td class="py-3  text-center ">${item.reservaF.estado}</td>
-                 <td class="py-3  text-center ">${item.reservaF.pagoEstado}</td>
-                 <td class="py-3  text-center ">${dateTimeString}</td>
-                 <td class="py-3  text-center ">${item.reservaF.usuario}</td>
+          <td class="py-3 text-center ">${item.lavadora}</td>
+          <td class="py-3 text-center ">${item.reservaF.estado}</td>
+          <td class="py-3 text-center ">${item.reservaF.pagoEstado}</td>
+          <td class="py-3 text-center ">${item.reservaF.reservaId}</td>
+          <td class="py-3 text-center ">${item.reservaF.fechaInicio}</td>
+          <td class="py-3 text-center ">${item.reservaF.usuario}</td>
                             
 
         
@@ -115,10 +115,10 @@ function filtrarReservas() {
         const tr = document.createElement('tr');
         tr.className = 'bg-white border-b hover:bg-gray-100';
         tr.innerHTML = `
-          <td class="py-3 text-center ">${item.reservaF.reservaId}</td>
           <td class="py-3 text-center ">${item.lavadora}</td>
           <td class="py-3 text-center ">${item.reservaF.estado}</td>
           <td class="py-3 text-center ">${item.reservaF.pagoEstado}</td>
+          <td class="py-3 text-center ">${item.reservaF.reservaId}</td>
           <td class="py-3 text-center ">${item.reservaF.fechaInicio}</td>
           <td class="py-3 text-center ">${item.reservaF.usuario}</td>
           

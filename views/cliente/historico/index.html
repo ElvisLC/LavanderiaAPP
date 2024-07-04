@@ -16,7 +16,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         /* Add this to your CSS file */
-        
+       @media (max-width:1024px) {
+        #tableHide{
+         display: none; 
+        }
+        #eye{
+          display:block;
+          text-align: center;
+        }
+       }
         
         #list {
           transform: translateX(-100%); /* Initial state: hidden off-screen to the left */
@@ -54,16 +62,7 @@
         }
         
         
-        #formulario_lavadora{
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-        }
-        #formLavadora{
-            @media(max-width: 1000px){
-                margin-left: 3rem;
-                
-            }
-        }
+        
         
     </style>
 </head>
@@ -230,9 +229,9 @@
       
         <div class="flex-grow p-4 overflow-y-auto ml-14">
 
-            <div class="bg-white shadow rounded-md p-4 md:mx-10 my-10">
+            <div class="bg-white shadow rounded-md ml-4 p-4 md:max-w-2xl ">
                 <h2 class="text-xl font-bold mb-2 text-center">Filtrar por</h2>
-                <div class="grid grid-cols-1 gap-4 ml-10 md:grid-cols-2">
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <div class="flex flex-col">
                     <label for="equipo" class="block text-gray-700 text-sm font-bold mb-2">Equipo</label>
                     <select id="equipo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
@@ -272,22 +271,24 @@
               </div>
 
             <h1 class="flex justify-center text-center text-[2rem] mt-20">HISTORIAL DE PAGOS</h1>
-            <div class="reservas-container bg-white shadow-md rounded p-4 mx-10">
-                <table class="w-full">
+
+            <div class="reservas-container bg-white shadow-md rounded ml-3 ">
+                <table class="w-full ">
                   <thead>
                     <tr>
+                      <th class="text-center">Fecha</th>
                       <th class="text-center">Equipo</th>
-                      <th class="text-center">Cedula</th>
-                      <th class="text-center">Estado</th>
-
-                      <th class="text-center">Telefono</th>
-                      <th class="text-center">Banco</th>
-                      <th class="text-center">Monto</th>
-                      <th class="text-center">Numero de referencia</th>
+                      <th id="eye"  class="text-center flex justify-center pr-2  md:hidden ">Detalles</th>
+                      <th id="tableHide" class="text-center">Monto</th>
+                      <th id="tableHide" class="text-center">Cedula</th>
+                      <th id="tableHide" class="text-center">Estado</th>
+                      <th id="tableHide" class="text-center">Telefono</th>
+                      <th id="tableHide" class="text-center">Banco</th>
+                      <th id="tableHide" class="text-center">Numero de referencia</th>
                     
                     </tr>
                   </thead>
-                  <tbody class="pagosPV">
+                  <tbody class="pagosPV w-full ">
                   </tbody>
                 </table>
 

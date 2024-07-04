@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
 
   try {
     const ganancias=await axios.get('/api/pagos/ganancias')
-    
+   
     gananciasC.innerHTML=`${ganancias.data.toFixed(2)}`
     console.log(ganancias);
   } catch (error) {
