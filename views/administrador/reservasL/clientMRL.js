@@ -26,19 +26,55 @@ document.addEventListener('DOMContentLoaded',async ()=>{
        const dateTimeString = date.toLocaleString('en-US', options);
        console.log(dateTimeString); // Output: "06/28/2024, 09:52 PM"
        console.log(dateTimeString); // Output: "28/06/2024, 21:52"
-       tr.innerHTML=`
-                
-          <td class="py-3 text-center ">${item.lavadora}</td>
-          <td class="py-3 text-center ">${item.reservaF.estado}</td>
-          <td class="py-3 text-center ">${item.reservaF.pagoEstado}</td>
-          <td class="py-3 text-center ">${item.reservaF.reservaId}</td>
-          <td class="py-3 text-center ">${item.reservaF.fechaInicio}</td>
-          <td class="py-3 text-center ">${item.reservaF.usuario}</td>
-                            
+       tr.innerHTML = `
+       <td class="py-3 text-center ">${item.lavadora}</td>
+       <td class="py-3 text-center ">${item.reservaF.estado}</td>
+       <td id="tableHide" class="py-3 text-center ">${item.reservaF.pagoEstado}</td>
+       <td id="tableHide" class="py-3 text-center ">${item.reservaF.reservaId}</td>
+       <td id="tableHide" class="py-3 text-center ">${item.reservaF.fechaInicio}</td>
+       <td id="tableHide" class="py-3 text-center ">${item.reservaF.usuario}</td>
+         <td  class="">
+                  <button data-modal-target="default-modal" onclick="mostrarModal()" data-modal-toggle="default-modal" class=" mx-auto flex justify-center lg:hidden py-2    text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                  <img src="../../media/assets/eye.svg" alt="">
+                  </button>
+          </td>
+       <div class='flex justify-center'>
+ 
+ </div>
 
-        
-           
-     `
+<!-- Main modal -->
+<div id="default-modal" tabindex="-1" class="fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-gray-500 bg-opacity-50 overflow-y-auto overflow-x-hidden" style="display: none;">
+<!-- Contenido del modal -->
+<div class="relative p-4 w-full mt-52	 max-w-2xl max-h-full mx-auto">
+<!-- Modal content -->
+<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+<h2 class="text-lg text-center font-bold">DATOS DEL PAGO</h2>
+<!-- Modal body -->
+<div class="p-4 md:p-5 space-y-4">
+<p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+PAGO ESTADO:${item.reservaF.pagoEstado}
+</p>
+<p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+RESERVA ID :${item.reservaF.reservaId}
+</p>
+<p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+FECHA:${item.reservaF.fechaInicio}
+</p>
+<p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+USUARIO :${item.reservaF.usuario}
+</p>
+
+</div>
+<!-- Modal footer -->
+<div class="flex items-center  p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+<button data-modal-target="default-modal" onclick="cerrarModal()" data-modal-toggle="default-modal" class="mx-auto block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+Cerrar ventana
+</button>
+</div>
+</div>
+</div>
+</div>
+     `;
 
        reservasC.appendChild(tr)
 
@@ -115,14 +151,54 @@ function filtrarReservas() {
         const tr = document.createElement('tr');
         tr.className = 'bg-white border-b hover:bg-gray-100';
         tr.innerHTML = `
-          <td class="py-3 text-center ">${item.lavadora}</td>
-          <td class="py-3 text-center ">${item.reservaF.estado}</td>
-          <td class="py-3 text-center ">${item.reservaF.pagoEstado}</td>
-          <td class="py-3 text-center ">${item.reservaF.reservaId}</td>
-          <td class="py-3 text-center ">${item.reservaF.fechaInicio}</td>
-          <td class="py-3 text-center ">${item.reservaF.usuario}</td>
-          
-        `;
+        <td class="py-3 text-center ">${item.lavadora}</td>
+        <td class="py-3 text-center ">${item.reservaF.estado}</td>
+        <td id="tableHide" class="py-3 text-center ">${item.reservaF.pagoEstado}</td>
+        <td id="tableHide" class="py-3 text-center ">${item.reservaF.reservaId}</td>
+        <td id="tableHide" class="py-3 text-center ">${item.reservaF.fechaInicio}</td>
+        <td id="tableHide" class="py-3 text-center ">${item.reservaF.usuario}</td>
+          <td  class="">
+                   <button data-modal-target="default-modal" onclick="mostrarModal()" data-modal-toggle="default-modal" class=" mx-auto flex justify-center lg:hidden py-2    text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                   <img src="../../media/assets/eye.svg" alt="">
+                   </button>
+           </td>
+        <div class='flex justify-center'>
+  
+  </div>
+ 
+ <!-- Main modal -->
+ <div id="default-modal" tabindex="-1" class="fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-gray-500 bg-opacity-50 overflow-y-auto overflow-x-hidden" style="display: none;">
+ <!-- Contenido del modal -->
+ <div class="relative p-4 w-full mt-52	 max-w-2xl max-h-full mx-auto">
+ <!-- Modal content -->
+ <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+ <h2 class="text-lg text-center font-bold">DATOS DEL PAGO</h2>
+ <!-- Modal body -->
+ <div class="p-4 md:p-5 space-y-4">
+ <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+ PAGO ESTADO:${item.reservaF.pagoEstado}
+ </p>
+ <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+ RESERVA ID :${item.reservaF.reservaId}
+ </p>
+ <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+ FECHA:${item.reservaF.fechaInicio}
+ </p>
+ <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+ USUARIO :${item.reservaF.usuario}
+ </p>
+ 
+ </div>
+ <!-- Modal footer -->
+ <div class="flex items-center  p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+ <button data-modal-target="default-modal" onclick="cerrarModal()" data-modal-toggle="default-modal" class="mx-auto block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+ Cerrar ventana
+ </button>
+ </div>
+ </div>
+ </div>
+ </div>
+      `;
         reservasC.appendChild(tr);
       });
     })
@@ -143,3 +219,14 @@ async function cerrarSesion(){
     console.error(error) // Verificar que el error sea registrado correctamente
   }
 }
+
+function mostrarModal() {
+  console.log('Botón Mostrar clickeado');
+  // Verificar que el modal se muestre correctamente
+  document.getElementById('default-modal').style.display = 'block';
+};
+function cerrarModal() {
+  console.log('Botón Mostrar clickeado');
+  // Verificar que el modal se muestre correctamente
+  document.getElementById('default-modal').style.display = 'none';
+};

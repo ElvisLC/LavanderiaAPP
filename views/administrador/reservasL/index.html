@@ -23,6 +23,15 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+@media (max-width:1024px) {
+        #tableHide{
+         display: none; 
+        }
+        #eye{
+          display:block;
+          text-align: center;
+        }
+       }
         
         #list {
           transform: translateX(-100%); /* Initial state: hidden off-screen to the left */
@@ -248,7 +257,7 @@
       
         <div class="flex-grow p-4 overflow-y-auto  flex  flex-col justify-center items-center">
 
-            <div class="bg-white shadow rounded-md ml-16   p-9 ">
+            <div class="bg-white shadow ml-16 p-9 ">
                 <h2 class="text-xl font-bold mb-2 text-center">Filtrar por</h2>
                 <div class="grid grid-cols-2 gap-4 ">
                  
@@ -287,16 +296,17 @@
               </div>
 
             <h1 class="flex justify-center text-center text-[2rem] mt-20 ml-14">HISTORIAL DE RESERVAS-LAVADORAS</h1>
-            <div class="reservas-container bg-white shadow-md rounded  p-10 mt-4 ml-16  ">
-                <table class=" w-full max-w-2xl table-auto  md:max-w-7xl" style="table-layout: fixed">
+            <div class="reservas-container bg-white shadow-md rounded   mt-4 ml-16  ">
+                <table class="ml-6 w-full table-auto  md:max-w-7xl" style="table-layout: fixed">
                     <thead>
                       <tr>
                         <th class="text-center">Nro lavadora</th>
                         <th class="text-center">Estado</th>
-                        <th class="text-center">Pago estado</th>
-                        <th class="text-center">Reserva ID</th>
-                        <th class="text-center">Fecha</th>
-                        <th class="text-center">Usuario</th>
+                        <th id="eye"  class="text-center flex justify-center   md:hidden ">Detalles</th>
+                        <th id="tableHide" class="text-center">Pago estado</th>
+                        <th id="tableHide" class="text-center">Reserva ID</th>
+                        <th id="tableHide" class="text-center">Fecha</th>
+                        <th id="tableHide" class="text-center">Usuario</th>
                         
                       </tr>
                     </thead>

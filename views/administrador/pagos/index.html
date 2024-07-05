@@ -20,11 +20,14 @@
         #tableHide{
          display: none; 
         }
+
         #eye{
           display:block;
-          text-align: center;
+        
         }
        }
+  
+        
         
         #list {
           transform: translateX(-100%); /* Initial state: hidden off-screen to the left */
@@ -244,22 +247,22 @@
            
             
         </nav> 
-        <div class="flex-grow p-4 overflow-y-auto w-full mx-20">
+        <div class="flex-grow justify-center  overflow-y-auto w-full ml-20 mr-2">
 
             <h1 class="flex justify-center text-center text-[2rem] mt-20">MOSTRAR PAGOS POR VERIFICAR</h1>
-            <div class="reservas-container bg-white shadow-md rounded p-4 mt-4">
-                <table class="w-full">
+            <div class="reservas-container bg-white shadow-md rounded  mt-4">
+                <table class="w-full ml-3">
                   <thead>
-                    <tr>
-                      <th class="text-center">Equipo</th>
-                      <th class="text-center">Monto</th>
-                      <th id="eye"  class="text-center flex justify-center pr-2  md:hidden ">Detalles</th>
-                      <th class="text-center">Telefono</th>
-                      <th class="text-center">Banco</th>
-                      <th class="text-center">Cedula</th>
-                      <th class="text-center">Numero de referencia</th>
-                      <th class="text-center">VERIFICAR</th>
-                      <th class="text-center">RECHAZAR</th>
+                    <tr class="">
+                      <th class=" md:text-center">Equipo</th>
+                      <th class=" md:text-center">Monto</th>
+                      <th id="eye"  class=" md:text-center  md:hidden ">Detalles</th>
+                      <th id="tableHide"  class="text-center">Telefono</th>
+                      <th id="tableHide"  class="text-center">Banco</th>
+                      <th id="tableHide"  class="text-center">Cedula</th>
+                      <th id="tableHide"  class="text-center">Numero de referencia</th>
+                      <th id="tableHide"  class="text-center">VERIFICAR</th>
+                      <th id="tableHide"  class="text-center">RECHAZAR</th>
 
 
                     </tr>

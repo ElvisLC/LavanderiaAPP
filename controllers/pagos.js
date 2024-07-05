@@ -229,7 +229,7 @@ userPagos.get("/mostrarHistorial", async (req, res) => {
 setInterval(async () => {
   try {
     const mostrarPPV = await pagoSchema.find().exec();
-    console.log('WORKING PAGOS JIJI');
+
 
     for (const pago of mostrarPPV) {
       const fechaActual = new Date();
