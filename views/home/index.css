@@ -181,7 +181,11 @@ nav ul li  a{
 }
 
 #servicios p{
-    font-size: 1rem;
+    font-size: 100%
+}
+
+#beneficios p{
+  font-size: 100%
 }
 
 #servicios h3{
