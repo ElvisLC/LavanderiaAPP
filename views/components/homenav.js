@@ -92,7 +92,7 @@ const crearFooter = () => {
             <div class="itemFooter">  
             <h3>Contactanos</h3>
         <div class="contactoItem"> 
-            <a href="tel:+584129005220"> 
+            <a target="_blank"  href="tel:+584129005220"> 
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
@@ -105,7 +105,7 @@ const crearFooter = () => {
         </div>
     
         <div class="contactoItem">
-            <a href="mailto:lavanderialalagunaazul@gmail.com">
+            <a target="_blank" href="mailto:lavanderialalagunaazul@gmail.com">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
@@ -123,7 +123,7 @@ const crearFooter = () => {
         <div class="contactoItem">
     
           
-            <a href="href="https://www.instagram.com/lavanderia_lalagunaazul?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="">
+            <a target="_blank" href="href="https://www.instagram.com/lavanderia_lalagunaazul?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
@@ -133,7 +133,7 @@ const crearFooter = () => {
             </a>
            
     
-               <a class="disableItem" href="https://www.instagram.com/lavanderia_lalagunaazul?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+               <a target="_blank" class="disableItem" href="https://www.instagram.com/lavanderia_lalagunaazul?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
                 lavanderia_lalagunaazul
                </a>
             
