@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded',async ()=>{
       console.log(pago);
       console.log(pago.pagos.banco);
       let tr=document.createElement('tr')
-      tr.className = 'bg-white border-b hover:bg-gray-100 mx-auto ';
+      tr.className = 'bg-white border-b hover:bg-gray-100  ';
       let idReserva=pago.pagos.idReserva
       tr.innerHTML=`
                 
                 <td class="  text-end md:text-center ">${pago.pagos.equipoR}</td>
-                <td class=" m-1 text-end md:text-center">${pago.pagos.monto}</td>
+                <td class=" text-end md:text-center">${pago.pagos.monto}</td>
                 <td   class="text-end   md:text-center lg:hidden">
                 
                   <button data-modal-target="default-modal" onclick="mostrarModal()" data-modal-toggle="default-modal" class=" mx-auto flex justify-end lg:hidden py-2    text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
@@ -30,12 +30,12 @@ document.addEventListener('DOMContentLoaded',async ()=>{
 
                 <td id="tableHide"  class="py-3 px-6 text-center">${pago.pagos.telefono}</td>
                 <td id="tableHide"  class="py-3 px-6 text-center">${pago.pagos.banco}</td>
-                <td id="tableHide"  class="py-3 px-6 text-center">${pago.pagos.cedula}</td>
+                <td id"tableHide"  class="py-3 px-6 text-center">${pago.pagos.cedula}</td>
 
                 <td id="tableHide"  class="py-3 px-6 text-center">${pago.pagos.numeroReferencia}</td>
                 <td id="tableHide"  class="py-3 px-6 text-center">
                     <button id="tableHide"  onclick="verificar('${idReserva}')" class="bg-[#68FF33] hover:bg-green-300 text-white font-bold py-2 px-4 rounded">
-                        <img src="../media/assets/verify.svg" alt="">
+                        =<img src="../media/assets/verify.svg" alt="">
                     </button>
 
                   

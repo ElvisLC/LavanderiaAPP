@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded',async ()=>{
        <td class="py-3 text-center ">${item.reservaF.estado}</td>
        <td id="tableHide" class="py-3 text-center ">${item.reservaF.pagoEstado}</td>
        <td id="tableHide" class="py-3 text-center ">${item.reservaF.reservaId}</td>
-       <td id="tableHide" class="py-3 text-center ">${item.reservaF.fechaInicio}</td>
+       <td id="tableHide" class="py-3 text-center ">${new Date(item.reservaF.fechaInicio).toLocaleDateString('es-ES', { month: 'long', day: 'numeric' })}, ${new Date(item.reservaF.fechaInicio).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', hour12: true })}</td>
        <td id="tableHide" class="py-3 text-center ">${item.reservaF.usuario}</td>
          <td  class="">
                   <button data-modal-target="default-modal" onclick="mostrarModal()" data-modal-toggle="default-modal" class=" mx-auto flex justify-center lg:hidden py-2    text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
@@ -58,7 +58,7 @@ PAGO ESTADO:${item.reservaF.pagoEstado}
 RESERVA ID :${item.reservaF.reservaId}
 </p>
 <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-FECHA:${item.reservaF.fechaInicio}
+FECHA:${new Date(item.reservaF.fechaInicio).toLocaleDateString('es-ES', { month: 'long', day: 'numeric' })}, ${new Date(item.reservaF.fechaInicio).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', hour12: true })}
 </p>
 <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
 USUARIO :${item.reservaF.usuario}
@@ -155,7 +155,7 @@ function filtrarReservas() {
         <td class="py-3 text-center ">${item.reservaF.estado}</td>
         <td id="tableHide" class="py-3 text-center ">${item.reservaF.pagoEstado}</td>
         <td id="tableHide" class="py-3 text-center ">${item.reservaF.reservaId}</td>
-        <td id="tableHide" class="py-3 text-center ">${item.reservaF.fechaInicio}</td>
+        <td id="tableHide" class="py-3 text-center ">${new Date(item.reservaF.fechaInicio).toLocaleDateString('es-ES', { month: 'long', day: 'numeric' })}, ${new Date(item.reservaF.fechaInicio).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', hour12: true })}</td>
         <td id="tableHide" class="py-3 text-center ">${item.reservaF.usuario}</td>
           <td  class="">
                    <button data-modal-target="default-modal" onclick="mostrarModal()" data-modal-toggle="default-modal" class=" mx-auto flex justify-center lg:hidden py-2    text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
@@ -182,7 +182,7 @@ function filtrarReservas() {
  RESERVA ID :${item.reservaF.reservaId}
  </p>
  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
- FECHA:${item.reservaF.fechaInicio}
+ FECHA:${new Date(item.reservaF.fechaInicio).toLocaleDateString('es-ES', { month: 'long', day: 'numeric' })}, ${new Date(item.reservaF.fechaInicio).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', hour12: true })}
  </p>
  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
  USUARIO :${item.reservaF.usuario}
