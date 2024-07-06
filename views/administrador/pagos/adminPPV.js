@@ -20,22 +20,22 @@ document.addEventListener('DOMContentLoaded',async ()=>{
       tr.innerHTML=`
                 
                 <td class="  text-end md:text-center ">${pago.pagos.equipoR}</td>
-                <td class=" text-end md:text-center">${pago.pagos.monto}</td>
-                <td   class="text-end   md:text-center lg:hidden">
+                <td class=" text-end  md:text-center">${pago.pagos.monto}</td>
+                <td class="text-end   md:text-center lg:hidden">
                 
-                  <button data-modal-target="default-modal" onclick="mostrarModal()" data-modal-toggle="default-modal" class=" mx-auto flex justify-end lg:hidden py-2    text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                  <button data-modal-target="default-modal" onclick="mostrarModal()" data-modal-toggle="default-modal" class=" mx-auto flex justify-end lg:hidden py-2    text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 text-end dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
                   <img src="../../media/assets/eye.svg" alt="">
                   </button>
                 </td>
 
                 <td id="tableHide"  class="py-3 px-6 text-center">${pago.pagos.telefono}</td>
                 <td id="tableHide"  class="py-3 px-6 text-center">${pago.pagos.banco}</td>
-                <td id"tableHide"  class="py-3 px-6 text-center">${pago.pagos.cedula}</td>
+                <td id="tableHide"  class="py-3 px-6 text-center">${pago.pagos.cedula}</td>
 
                 <td id="tableHide"  class="py-3 px-6 text-center">${pago.pagos.numeroReferencia}</td>
                 <td id="tableHide"  class="py-3 px-6 text-center">
                     <button id="tableHide"  onclick="verificar('${idReserva}')" class="bg-[#68FF33] hover:bg-green-300 text-white font-bold py-2 px-4 rounded">
-                        =<img src="../media/assets/verify.svg" alt="">
+                        <img src="../media/assets/verify.svg" alt="">
                     </button>
 
                   
