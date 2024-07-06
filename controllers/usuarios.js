@@ -15,10 +15,15 @@ userRouter.post("/registro", async (req, res) => {
   if (listado) {
     return res
       .status(400)
-      .json({ message: "No puede dejar los campos vacios" });
+      .json({ message: "No puede dejar los campos vacios" ,validate:true});
   }
 
+  const getUser= await user.find({email:email})
 
+  if(getUser){
+    res.json({message:'El usuario ya existe',validate:true})
+  }else{
+    
   usuario.usuario = nombre;
   usuario.email = email;
   usuario.password = password;
@@ -29,16 +34,16 @@ userRouter.post("/registro", async (req, res) => {
 
   try {
     await usuario.save();
-    const usuarios = await user.find()
     res.status(200).json({
-      message: "Se ha creado el usuario con exito",
-    })
+      message: "Se ha creado el usuario con exito",validate:false})
 
       ;
   } catch (error) {
     console.error();
   }
 
+
+  }
 
   console.log(req.body)
 

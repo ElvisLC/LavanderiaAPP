@@ -89,11 +89,11 @@ formulario.addEventListener("submit", async (e) => {
   };
   try {
     const post = await axios.post("/api/users/registro", newUser);
-    createNotificacion(false, post.data.message)
+    createNotificacion(post.data.validate, post.data.message)
 
     // Esperar 3 segundos antes de redirigir
     await new Promise(resolve => setTimeout(resolve, 3000));
-    window.location.href="/login/";
+    
 
   } catch (error) {
   console.log(error)
