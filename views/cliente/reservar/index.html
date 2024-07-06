@@ -227,7 +227,7 @@
             
         </nav> 
 
-        <div class="container p-4 ml-6  flex justify-center items-center min-h-screen ">
+        <div class="container p-4 ml-6  flex justify-center items-center min-h-screen md:mx-auto ">
             <div class="w-full max-w-2xl  mx-auto ">
                 <h2 class="text-2xl font-bold mb-4 text-center">Reservar en linea</h2>
 
@@ -311,17 +311,17 @@
 
                                 <div class="m-6">
                                     <label for="cedulaEmisor" class="block text-gray-700 text-sm font-bold mb-2">Cedula del emisor</label>
-                                <input type="text" class="cedulaEmisor block w-full bg-gray-200 text-gray-700 border border-gray-200 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-4">
+                                <input inputmode="numeric" pattern="[0-9]*" type="text" class="cedulaEmisor block w-full bg-gray-200 text-gray-700 border border-gray-200 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-4">
     
                                 <label for="telefonoEmisor" class="block text-gray-700 text-sm font-bold mb-2">Telefono</label>
-                                <input type="text" class="telefonoEmisor block w-full bg-gray-200 text-gray-700 border border-gray-200 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-4">
+                                <input inputmode="numeric" pattern="[0-9]*" type="text" class="telefonoEmisor block w-full bg-gray-200 text-gray-700 border border-gray-200 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-4">
     
                                 <label for="banksCharge" class="block text-gray-700 text-sm font-bold mb-2">Banco emisor</label>
                                 <select class="banksCharge block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-4">
                                 </select>
     
                                 <label for="numeroReferencia" class="block text-gray-700 text-sm font-bold mb-2">Nro de referencia</label>
-                                <input type="text" class="numeroReferencia block w-full bg-gray-200 text-gray-700 border border-gray-200 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                <input inputmode="numeric" pattern="[0-9]*" type="text" class="numeroReferencia block w-full bg-gray-200 text-gray-700 border border-gray-200 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                                 </div>
                                 
                             </div>
@@ -336,11 +336,7 @@
 
    
         <script>
-              const fechaInput = document.getElementById('fechareserva');
-                 const fechaActual = new Date();
-                 const fechaMinima = fechaActual.toISOString().slice(0, 16); // formato yyyy-MM-ddTHH:mm
-                            
-                fechaInput.min = fechaMinima;
+  
             async function cerrarSesion(){
                 try {
                     const response = await axios.post('/api/users/logout')

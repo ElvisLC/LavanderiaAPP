@@ -74,19 +74,21 @@ formulario.addEventListener("submit", async (e) => {
 
   try {
     const respuesta = await axios.post("/api/users/login", {
-
-        email: inputEmail.value,
-        password: inputPass.value,});
-      createNotificacion(respuesta.data.validate,respuesta.data.message)
-    if(respuesta.data.rol==0){
-       window.location.href='/reservar/'
-    }
-    else if(respuesta.data.rol==1){
-      window.location.href='/administrador-estadisticas/'
-    }
-    
-
-   
+      email: inputEmail.value,
+      password: inputPass.value,
+    });
+  
+    createNotificacion(respuesta.data.validate, respuesta.data.message);
+  
+    // Retrasar la navegación a la nueva página durante 3 segundos
+    setTimeout(() => {
+      if (respuesta.data.rol === 0) {
+        window.location.href = '/reservar/';
+      } else if (respuesta.data.rol === 1) {
+        window.location.href = '/administrador-estadisticas/';
+      }
+    }, 2000); // 3000 milisegundos = 3 segundos
+  
   } catch (error) {
     console.error("Error:", error);
     // Inform user about error

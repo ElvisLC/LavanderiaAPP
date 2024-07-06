@@ -402,7 +402,19 @@ validate.addEventListener('change', () => {
 });
 
 
+const numericInputs = document.querySelectorAll('input[inputmode="numeric"]');
 
+numericInputs.forEach(input => {
+  input.addEventListener('input', event => {
+    const value = event.target.value;
+    event.target.value = value.replace(/[^0-9]/g, '');
+  });
+});
+              const fechaInput = document.getElementById('fechareserva');
+                 const fechaActual = new Date();
+                 const fechaMinima = fechaActual.toISOString().slice(0, 16); // formato yyyy-MM-ddTHH:mm
+                            
+                fechaInput.min = fechaMinima;
 
 
 

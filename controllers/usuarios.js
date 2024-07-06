@@ -21,7 +21,7 @@ userRouter.post("/registro", async (req, res) => {
   const getUser= await user.find({email:email})
 
   if(getUser){
-    res.json({message:'El usuario ya existe',validate:true})
+    res.json({message:'El usuario ya se encuentra registrao, por favor, inicia sesion',validate:true})
   }else{
     
   usuario.usuario = nombre;
@@ -81,7 +81,7 @@ userRouter.post("/login", async (req, res) => {
       // Establecer la cookie antes de enviar la respuesta
       res.cookie('token', token, { httpOnly: true, secure: true, sameSite: 'None', maxAge: 3600 * 1000 });
       // Enviar la respuesta
-      res.status(200).json({ message: 'Login exitoso' ,rol:consulta.rol,validate:false});
+      res.status(200).json({ message: 'Has iniciado sesion con exito' ,rol:consulta.rol,validate:false});
     }
 
     

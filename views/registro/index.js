@@ -85,7 +85,7 @@ formulario.addEventListener("submit", async (e) => {
     email: inputEmail.value,
     password: inputPass.value,
     telefono: inputTelf.value,
-    rol:0
+  
   };
   try {
     const post = await axios.post("/api/users/registro", newUser);
