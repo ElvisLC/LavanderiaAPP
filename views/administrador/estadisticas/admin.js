@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
     let promedio=parseFloat(data.promedio)
     let earning=parseFloat(ganancias.data)
     total=earning/promedio
-    dolar.innerHTML=`${total}`
+    dolar.innerHTML=`${total.toFixed(2)}`
     console.log(data.promedio);
     console.log(ganancias.data);
 
