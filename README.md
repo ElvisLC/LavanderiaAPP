@@ -1,0 +1,3 @@
+ADMINISTRADOR 
+EMAIL:elvislacruz22@gmail.com
+PASSWORD:Hola1234
