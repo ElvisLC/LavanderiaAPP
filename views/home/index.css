@@ -255,6 +255,8 @@ nav ul li {
   .serviciosContainer{
     grid-template-columns: repeat(1,1fr);
 }
+
+
 .ubicacion h2{
 
     margin: 10%;
@@ -347,33 +349,6 @@ nav ul li {
     
 
 
-/* PRECIOS */
-#precios h2{
-    font-size: 3rem;
-    font-weight: bold;
-    color: #29ABE2;
-    margin: 5%;
-    text-align: center;
-}
-
-.containerPrecios h3{
-    text-align: center;
-    color: #29ABE2;
-    margin: 5%;
-    font-size: 1.4rem;
-}
-
-.containerPrecios p{
-    text-align: center;
-    color: #29ABE2;
-    margin: 5%;
-    font-size:1.2rem ;
-}
-
-
-.containerPrecios p{
-    color: #29ABE2;
-}
 
 /* 
 footer
