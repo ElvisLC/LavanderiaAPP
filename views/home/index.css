@@ -259,8 +259,25 @@ nav ul li {
 
     margin: 10%;
 }
+#servicios h3{
+  font-size:3rem ;
+}
 
+#servicios h2{
+  text-align: center;
+  font-size: 4rem;
+}
 
+#servicios p{
+  text-align: center;
+  font-size: 2rem;
+
+  
+}
+
+.textoInicio p{
+  font-size: 2rem;
+}
 
 .disableItem{
     display: none;
@@ -277,12 +294,11 @@ nav ul li {
 }
 .sidenav {
     display: block;
-    
     height: 100%;
     width: 0;
     position: fixed;
     z-index: 1;
-    top: 1rem;
+    top: 0;
     right: 0;
     background-color: #29ABE2;
     overflow-x: hidden;
