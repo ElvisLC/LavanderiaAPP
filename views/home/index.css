@@ -240,8 +240,11 @@ nav ul li {
         
         /* Elimina el margen superior predeterminado */
       }
-    
-
+      .flexcont{
+        display: flex;
+        flex-direction: column!important;
+      }
+      
     
 
 
