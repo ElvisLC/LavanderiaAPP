@@ -94,7 +94,7 @@ const crearFooter = () => {
             <div >
 
             <div>
-            <h3>Contactanos</h3>
+            <h3 class="text-2xl"> Contactanos</h3>
             </div>
 
             <div class='flexcont'>
@@ -163,9 +163,9 @@ const crearFooter = () => {
         
     
             <div>
-                <h3 class="mt-0">Horario</h3>
-                <p class="mt-">Lunes a Viernes: 8am - 7pm</p>
-                <p class="mt-3">Sábados y Domingos: 9am - 5pm</p>
+                <h3 class="mt-0 text-2xl">Horario</h3>
+                <p class="text-xl">Lunes a Viernes: 8am - 7pm</p>
+                <p class="mt-3 text-xl">Sábados y Domingos: 9am - 5pm</p>
             </div>
          
         </div>
@@ -173,7 +173,7 @@ const crearFooter = () => {
     
         </div>
         <div class="footer-bottom">
-            <p class="t">© 2020 Todos los Derechos Reservados. | Sitio Web Creado por: Elvis La Cruz</p>
+            <p class="text-xl">© 2020 Todos los Derechos Reservados. | Sitio Web Creado por: Elvis La Cruz</p>
         </div>`
 }
 

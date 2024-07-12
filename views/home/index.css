@@ -243,6 +243,7 @@ nav ul li {
       .flexcont{
         display: flex;
         flex-direction: column!important;
+        
       }
       
     
