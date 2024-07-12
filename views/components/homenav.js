@@ -90,8 +90,16 @@ const crearFooter = () => {
 
           
             <div class="itemFooter">  
+            
+            <div >
+
+            <div>
             <h3>Contactanos</h3>
-        <div class="contactoItem"> 
+            </div>
+
+            <div class='flexcont'>
+             <div class="contactoItem"> 
+
             <a target="_blank"  href="tel:+584129005220"> 
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -102,9 +110,9 @@ const crearFooter = () => {
                 +58 4129005220
             </a>
     
-        </div>
-    
-        <div class="contactoItem">
+            </div>
+
+            <div class="contactoItem">
             <a target="_blank" href="mailto:lavanderialalagunaazul@gmail.com">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -139,10 +147,18 @@ const crearFooter = () => {
             
           
         </div>
-    
-    
-         </div>
+
+            </div>
             
+    
+        
+    
+            </div>
+            <div>
+           
+    
+            </div>
+
     
         
     
@@ -155,7 +171,7 @@ const crearFooter = () => {
         </div>
     
     
-    
+        </div>
         <div class="footer-bottom">
             <p class="t">© 2020 Todos los Derechos Reservados. | Sitio Web Creado por: Elvis La Cruz</p>
         </div>`

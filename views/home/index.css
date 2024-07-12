@@ -365,7 +365,7 @@ footer
 
 .footer-container {
     display: flex;
-    gap: 0 5rem;
+    gap: 0 10rem;
     justify-content: center;
     
     
@@ -373,8 +373,14 @@ footer
 
 .itemFooter{
     display: flex;
-    flex-direction: column;
-    margin: 0 1rem;
+    flex-direction: row;
+    gap: 2rem;
+    
+}
+
+.flexcont{
+  display: flex;
+  flex-direction: row;
 }
 
 .contactoItem{
