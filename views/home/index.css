@@ -14,6 +14,7 @@ body {
 
 header {
     display: flex;
+    justify-content: space-around;
    
 }
 
@@ -134,7 +135,7 @@ nav ul li {
 .sidenav {
    display: flex;
    padding-top: 50px;
- 
+  justify-content: end;
 
   }
 
@@ -247,81 +248,85 @@ nav ul li {
 
 }
 
+@media (max-width:1024px) {
+  header{
+    justify-content: start;
+  }
+  .serviciosContainer{
+    grid-template-columns: repeat(1,1fr);
+}
+.ubicacion h2{
 
-    .serviciosContainer{
-        grid-template-columns: repeat(1,1fr);
-    }
-    .ubicacion h2{
+    margin: 10%;
+}
 
-        margin: 10%;
-    }
+
+
+.disableItem{
+    display: none;
+}
+
+.menuBtn{
+    position: absolute;
+    margin-top: 3.1rem;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+    display: block;
+}
+.sidenav {
+    display: block;
     
-
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 1rem;
+    right: 0;
+    background-color: #29ABE2;
+    overflow-x: hidden;
+    transition: 0.5s;
    
-    .disableItem{
-        display: none;
-    }
-
-    .menuBtn{
-        position: absolute;
-        margin-top: 3.1rem;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
-        cursor: pointer;
-        display: block;
-    }
-    .sidenav {
-        display: block;
-        
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 1rem;
-        right: 0;
-        background-color: #29ABE2;
-        overflow-x: hidden;
-        transition: 0.5s;
-       
-        text-align:center;
-      }
-      
-      .sidenav a {
-        text-decoration: none;
-        font-size: 2.4rem;
-        color: white;
-        
-        display: block;
-        transition: 0.3s;
-      
-      }
-      
-      .sidenav a:hover{
-        color: #f1f1f1;
-      }
-      
-      .sidenav .closebtn {
-        position: absolute;
-        
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
-       
-      }
-
-      .closebtn{
-        visibility: visible;
-        cursor: pointer;
-        margin-top: 27px;
-      }
-
-      .logoImg{
-        margin-left: 1rem;
-      }
-
-      
+    text-align:center;
+  }
+  
+  .sidenav a {
+    text-decoration: none;
+    font-size: 2.4rem;
+    color: white;
     
+    display: block;
+    transition: 0.3s;
+  
+  }
+  
+  .sidenav a:hover{
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+   
+  }
+
+  .closebtn{
+    visibility: visible;
+    cursor: pointer;
+    margin-top: 27px;
+  }
+
+  .logoImg{
+    margin-left: 1rem;
+  }
+
+  
+
+}
 
     
 
