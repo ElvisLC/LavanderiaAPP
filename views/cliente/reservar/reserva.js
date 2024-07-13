@@ -20,20 +20,6 @@ let montoFinal
 
 
 
-// Obtener el input de fecha
-// const fechareservaInput = document.getElementById('fechareserva');
-                    
-// // Establecer el límite mínimo de fecha y hora actual
-// const fechaActual = new Date();
-// const fechaActualizada = fechaActual.toISOString().slice(0, 16);
-// fechareservaInput.min = fechaActualizada;
-
-// // Actualizar el límite mínimo de fecha y hora cada segundo
-// setInterval(() => {
-//     const fechaActual = new Date();
-//     const fechaActualizada = fechaActual.toISOString().slice(0, 16);
-//     fechareservaInput.min = fechaActualizada;
-// }, 1000);
 
 validate.addEventListener('change',()=>{
    //Obteniendo el ID del usuario

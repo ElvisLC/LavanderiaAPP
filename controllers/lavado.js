@@ -115,7 +115,6 @@ setInterval(async () => {
 
         if(fechaInicio.getTime()<fechaActual.getTime()  ){
           if(reserva.pagoEstado=='Pendiente'){
-            console.log('El pago no ha sido verificado, no puedes utilizar la lavadora');
             reserva.estado = 'Rechazada';
             reserva.pagoEstado = 'Rechazado';
             objeto.markModified('reservasObj'); // guardar los cambios en la base de datos
@@ -129,7 +128,6 @@ setInterval(async () => {
      // <--- Agregué esta línea para actualizar el estado de la reserva a "Finalizado"
         if (fechaActual.getTime() >= fechaInicio.getTime() && fechaActual.getTime() < fechaInicio.getTime() + 60 * 1000) {
           if(reserva.pagoEstado=='Pendiente'){
-            console.log('El pago no ha sido verificado, no puedes utilizar la lavadora');
             reserva.estado = 'Rechazada';
             reserva.pagoEstado = 'Rechazado';
             objeto.markModified('reservasObj'); // guardar los cambios en la base de datos
@@ -139,7 +137,6 @@ setInterval(async () => {
 
           else{
             if(reserva.estado=='Confirmada'){
-              console.log('LA RESERVA ES IGUAL A LA FECHA');
               objeto.estado = "Ocupado";
               reservaActiva = {
                 reserva
@@ -162,7 +159,6 @@ setInterval(async () => {
         if(objeto.reservaActiva){
 
           // console.log(objeto.reservaActiva);
-          console.log('HAY UNA RESERVA ACTIVA');
           let fechaReservaFinal= new Date(objeto.reservaActiva.reserva.fechaFinal)
           reserva.estado = 'En curso';
           objeto.markModified('reservasObj'); // guardar los cambios en la base de datos
@@ -170,7 +166,6 @@ setInterval(async () => {
           // console.log(fechaActual.getTime(),fechaReservaFinal.getTime());
           if (fechaActual.getTime() >= fechaReservaFinal.getTime() - 1000) {
           // buffer de 1 segundo
-            console.log('fechas iguales o fecha actual es mayor');
             // let reservaId=objeto.reservaActiva.reserva.reservaId
             console.log(reserva);
    // Actualizar la propiedad estado de la reserva en reservasObj
@@ -182,7 +177,6 @@ setInterval(async () => {
 
         }
         else{
-          console.log('NO HAY RESERVA ACTIVA');
           objeto.estado = "Disponible";
           await objeto.save(); 
         }
@@ -194,7 +188,6 @@ setInterval(async () => {
      
     }
 
-    console.log('Estado de lavadoras y reservas actualizado');
   } catch (error) {
     console.error('Error al actualizar estado de lavadoras y reservas:', error);
   }
