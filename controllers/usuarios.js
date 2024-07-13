@@ -20,9 +20,10 @@ userRouter.post("/registro", async (req, res) => {
 
   const getUser= await user.find({email:email})
 
-  if(getUser){
-    res.json({message:'El usuario ya se encuentra registrao, por favor, inicia sesion',validate:true})
-  }else{
+  if(!getUser){
+    res.json({message:'El usuario ya se encuentra registrado, por favor, inicia sesion',validate:true})
+  }
+  else{
     
   usuario.usuario = nombre;
   usuario.email = email;
