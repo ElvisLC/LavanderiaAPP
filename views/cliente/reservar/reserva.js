@@ -18,8 +18,25 @@ let montoFinal
 
 
 
+<<<<<<< HEAD
 
 
+=======
+// Obtener el input de fecha
+// const fechareservaInput = document.getElementById('fechareserva');
+                    
+// // Establecer el límite mínimo de fecha y hora actual
+// const fechaActual = new Date();
+// const fechaActualizada = fechaActual.toISOString().slice(0, 16);
+// fechareservaInput.min = fechaActualizada;
+
+// // Actualizar el límite mínimo de fecha y hora cada segundo
+// setInterval(() => {
+//     const fechaActual = new Date();
+//     const fechaActualizada = fechaActual.toISOString().slice(0, 16);
+//     fechareservaInput.min = fechaActualizada;
+// }, 1000);
+>>>>>>> 928e414 (solucion api caida)
 
 validate.addEventListener('change',()=>{
    //Obteniendo el ID del usuario
@@ -27,6 +44,8 @@ validate.addEventListener('change',()=>{
    .then((res) => res.json())
    .then((data) => {
      montoFinal = data.promedio * 2;
+      console.log(data);
+           
      montoTotalReserva.innerHTML = `${montoFinal}`;
      montoFinalGlobal = montoFinal;
      
@@ -123,15 +142,13 @@ includejabon.forEach((radio) => {
       montoTotal = 4
     }
 
-      fetch('https://ve.dolarapi.com/v1/dolares/oficial')
-        .then((res) => res.json())
-        .then((data) => {
-          montoFinal = data.promedio * montoTotal;
+
+          montoFinal = 40 * montoTotal;
           montoTotalReserva.innerHTML = `${montoFinal.toFixed(2)}`;
           montoFinalGlobal = montoFinal;
-          console.log(data.promedio);
+
           console.log(montoTotal);
-        });
+
     
   });
 });
@@ -164,15 +181,10 @@ includesuavizante.forEach((radio) => {
     }
 
 
-      fetch('https://ve.dolarapi.com/v1/dolares/oficial')
-        .then((res) => res.json())
-        .then((data) => {
-          montoFinal = data.promedio * montoTotal;
+          montoFinal = 40* montoTotal;
           montoTotalReserva.innerHTML = `${montoFinal.toFixed(2)}`;
           montoFinalGlobal = montoFinal;
-          console.log(data.promedio);
-          console.log(montoTotal);
-        });
+
     
   });
 });
@@ -202,14 +214,11 @@ includeservice.forEach((radio) => {
     else if (validarSuavizante==false && validarJabon==true&& validarServicio==false) {
       montoTotal = 4
     }
-      fetch('https://ve.dolarapi.com/v1/dolares/oficial')
-        .then((res) => res.json())
-        .then((data) => {
-          montoFinal = data.promedio * montoTotal;
+
+          montoFinal = 40 * montoTotal;
           montoTotalReserva.innerHTML =`${montoFinal.toFixed(2)}`;
           montoFinalGlobal = montoFinal;
-          
-        });
+
     
   });
 });
